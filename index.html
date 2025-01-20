@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Терминал Anderson Robotics</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Шрифт терминала */
+        
         body {
             background-color: #1a1a1a;
             color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'VT323', monospace; /* Шрифт терминала */
+            overflow: hidden;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Разрешить вертикальную прокрутку */
         }
         h1, h2 {
             text-align: center;
@@ -126,6 +128,18 @@
         .button:hover {
             background-color: #00cc00; /* Темнее при наведении */
         }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #00ff00;
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -135,13 +149,13 @@
         <div class="burger-line"></div>
     </div>
     <div class="nav" id="navMenu">
-        <a href="https://scpfoundation.net/anderson-robotics-hub" target="_blank">Главная</a>
-        <a href="https://andersonroboticss.github.io/Shop-a/" target="_blank">Магазин</a> <!-- Обновленная ссылка на Магазин -->
+        <a href="https://andersonroboticss.github.io/info/" target="_blank">Главная</a>
+        <a href="https://andersonroboticss.github.io/Shop-a/" target="_blank">Магазин</a>
     </div>
     <h1>Терминал Anderson Robotics</h1>
     <h2>Версия Протокола Безопасности 43.56</h2>
     <div class="terminal" id="terminal">
-        <pre id="output"></pre>
+        <pre id="output"></pre><div class="cursor"></div>
     </div>
     
     <div class="group">
