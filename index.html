@@ -11,9 +11,10 @@
             background-color: #1a1a1a;
             color: #00ff00;
             font-family: 'VT323', monospace; /* Шрифт терминала */
-            overflow: hidden;
             margin: 0;
             padding: 0;
+            overflow: auto; /* Разрешить скроллинг */
+            height: 100vh; /* Поддержка полной высоты экрана */
         }
         h1, h2 {
             text-align: center;
@@ -37,7 +38,8 @@
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
             animation: slideIn 1s;
             white-space: pre; /* Сохраняет пробелы и переносы строк */
-            overflow: hidden; /* Скрывает переполнение */
+            overflow: auto; /* Разрешить скроллинг внутри терминала */
+            max-height: 50vh; /* Ограничить высоту терминала на мобильных устройствах */
         }
         .footer {
             text-align: center;
@@ -139,6 +141,22 @@
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .terminal {
+                width: 90%;
+                padding: 10px;
+            }
+            .group {
+                width: 90%;
+            }
         }
     </style>
 </head>
